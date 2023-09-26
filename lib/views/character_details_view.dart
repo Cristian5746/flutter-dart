@@ -29,7 +29,7 @@ class CharacterDetailsView extends StatelessWidget {
             Text('Cantidad de Series: ${character.seriesCount}'),
             Text('Cantidad de Stories: ${character.storiesCount}'),
             Text('Cantidad de Events: ${character.eventsCount}'),
-            SizedBox(height: 20.0),
+            SizedBox(height: 19.0),
             // Nombre de las 3 primeras series
             Text('Primeras 3 Series:'),
             for (var series in character.firstThreeSeries) Text('- $series'),
