@@ -11,7 +11,7 @@ class CharacterDetailsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(character.name),
-        backgroundColor: Colors.red, // Cambiar el color del AppBar a rojo
+        backgroundColor: Colors.redAccent, // Cambiar el color del AppBar a rojo
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
