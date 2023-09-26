@@ -16,7 +16,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Marvel API'), backgroundColor: Colors.red),
+        appBar: AppBar(
+          title: const Text(
+            'Marvel API',
+            style: TextStyle(
+              fontSize: 24.0, // Tamaño de fuente más grande
+              fontWeight: FontWeight.bold, // Letra en negrita
+            ),
+          ),
+          backgroundColor: Colors.red,
+        ),
         body: CharacterListView(controller: marvelController),
       ),
     );
