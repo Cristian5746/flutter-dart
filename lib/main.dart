@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           title: const Text(
             'Marvel API',
             style: TextStyle(
-              fontSize: 24.0, // Tamaño de fuente más grande
+              fontSize: 45.0, // Aumenta el tamaño de fuente a 60.0
               fontWeight: FontWeight.bold, // Letra en negrita
             ),
           ),
