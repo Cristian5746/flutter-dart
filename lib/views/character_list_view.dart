@@ -1,4 +1,3 @@
-// views/character_list_view.dart
 import 'package:flutter/material.dart';
 import '../controllers/marvel_controller.dart';
 import '../models/character.dart';
@@ -28,7 +27,7 @@ class _CharacterListViewState extends State<CharacterListView> {
       future: charactersFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else {
@@ -50,27 +49,36 @@ class _CharacterListViewState extends State<CharacterListView> {
                   );
                 },
                 child: Card(
-                  child: Row(
-                    children: [
-                      // Imagen del personaje en un círculo
-                      Container(
-                        width: 80.0,
-                        height: 80.0,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: NetworkImage(character.imageUrl),
-                            fit: BoxFit.cover,
-                          ),
+                  elevation: 2.0, // Agregar sombra al card
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 10.0,
+                      horizontal: 20.0), // Espacio entre los cards
+                  child: ListTile(
+                    contentPadding: const EdgeInsets.all(
+                        10.0), // Espacio dentro del ListTile
+                    leading: Container(
+                      width: 100.0,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.grey), // Borde gris
+                        image: DecorationImage(
+                          image: NetworkImage(character.imageUrl),
+                          fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(width: 10.0),
-                      // Nombre del personaje
-                      Text(
-                        character.name,
-                        style: TextStyle(fontSize: 18.0),
-                      ),
-                    ],
+                    ),
+                    title: Text(
+                      character.name,
+                      style: const TextStyle(
+                          fontSize: 24.0,
+                          fontWeight:
+                              FontWeight.bold), // Tamaño de fuente más grande
+                    ),
+                    subtitle: const Text(
+                      'Marvel', // Título "Marvel"
+                      style: TextStyle(fontSize: 18.0),
+                    ),
                   ),
                 ),
               );

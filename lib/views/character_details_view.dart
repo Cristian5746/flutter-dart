@@ -13,27 +13,29 @@ class CharacterDetailsView extends StatelessWidget {
         title: Text(character.name),
         backgroundColor: Colors.red, // Cambiar el color del AppBar a rojo
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Imagen del personaje
-            Image.network(character.imageUrl),
-            SizedBox(height: 19.0),
-            // Descripción del personaje
-            Text('Descripción: ${character.description}'),
-            SizedBox(height: 19.0),
-            // Datos adicionales del personaje
-            Text('Cantidad de Comics: ${character.comicsCount}'),
-            Text('Cantidad de Series: ${character.seriesCount}'),
-            Text('Cantidad de Stories: ${character.storiesCount}'),
-            Text('Cantidad de Events: ${character.eventsCount}'),
-            SizedBox(height: 19.0),
-            // Nombre de las 3 primeras series
-            Text('Primeras 3 Series:'),
-            for (var series in character.firstThreeSeries) Text('- $series'),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Imagen del personaje
+              Image.network(character.imageUrl),
+              SizedBox(height: 19.0),
+              // Descripción del personaje
+              Text('Descripción: ${character.description}'),
+              SizedBox(height: 19.0),
+              // Datos adicionales del personaje
+              Text('Cantidad de Comics: ${character.comicsCount}'),
+              Text('Cantidad de Series: ${character.seriesCount}'),
+              Text('Cantidad de Stories: ${character.storiesCount}'),
+              Text('Cantidad de Events: ${character.eventsCount}'),
+              SizedBox(height: 19.0),
+              // Nombre de las 3 primeras series
+              Text('Primeras 3 Series:'),
+              for (var series in character.firstThreeSeries) Text('- $series'),
+            ],
+          ),
         ),
       ),
     );

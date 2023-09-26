@@ -16,9 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Marvel API'),
-        ),
+        appBar: AppBar(title: Text('Marvel API'), backgroundColor: Colors.red),
         body: CharacterListView(controller: marvelController),
       ),
     );
