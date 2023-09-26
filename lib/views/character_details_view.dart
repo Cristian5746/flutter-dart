@@ -11,7 +11,7 @@ class CharacterDetailsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(character.name),
-        backgroundColor: Colors.red, // Cambiar el color del AppBar a rojo
+        backgroundColor: Colors.redAccent, // Cambiar el color del AppBar a rojo
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -20,10 +20,10 @@ class CharacterDetailsView extends StatelessWidget {
           children: [
             // Imagen del personaje
             Image.network(character.imageUrl),
-            SizedBox(height: 20.0),
+            SizedBox(height: 19.0),
             // Descripción del personaje
             Text('Descripción: ${character.description}'),
-            SizedBox(height: 20.0),
+            SizedBox(height: 19.0),
             // Datos adicionales del personaje
             Text('Cantidad de Comics: ${character.comicsCount}'),
             Text('Cantidad de Series: ${character.seriesCount}'),
